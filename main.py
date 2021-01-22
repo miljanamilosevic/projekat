@@ -1,5 +1,5 @@
 from korisnici.korisnici import prijava
-from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige
+from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige
 from akcije.akcije import pretrazi_akcije
 
 def meni_administrator():
@@ -32,7 +32,7 @@ def meni_administrator():
         elif stavka == 7:
             dodaj_knjige()
         elif stavka == 8:
-            pass
+            izmeni_knjige()
         elif stavka == 9:
             pass
         elif stavka == 10:
@@ -77,12 +77,15 @@ def meni_menadzer():
 
 def meni_prodavac():
     while True:
-        print('\n1.Prikaz svih knjiga')
-        print('2.Pretraga knjiga')
+        print('\n1. Prikaz svih knjiga')
+        print('2. Pretraga knjiga')
         print('3. Prikaz svih akcija')
         print('4. Pretraga akcija')
-        print('5.Prodaja knjiga')
-        print('6. Kraj')
+        print('5. Prodaja knjiga')
+        print('6. Dodavanje knjige')
+        print('7. Izmena knjige')
+        print('8. Brisanje knjige')
+        print('9. Kraj')
 
         stavka = int(input("Izaberite stavku:"))
 
@@ -97,6 +100,12 @@ def meni_prodavac():
         elif stavka == 5:
             pass
         elif stavka == 6:
+            dodaj_knjige()
+        elif stavka == 7:
+            pass
+        elif stavka == 8:
+            pass
+        elif stavka == 9:
             return
         else:
             print("Greska!Pokusajte ponovo!")

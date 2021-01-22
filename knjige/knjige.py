@@ -1,4 +1,5 @@
-from knjige.knjigeIO import ucitaj_knjige
+from knjige.knjigeIO import ucitaj_knjige, sacuvaj_knjige
+
 
 def pregled_knjiga(knjige):
     zaglavlje = f"{'sifra':<5}{'naslov':<35}{'isbn':<20}{'autor':<20}{'izdavac':<20}{'broj strana':<20}{'godina':<20}{'cena':<10}{'kategorija':<20}"
@@ -116,30 +117,115 @@ def prikazi_knjige():
     pregled_knjiga(knjige)
 
 
-def provera(knjige, sifra):
-    for knjiga in knjige:
-        if knjiga["sifra"] == sifra:
-            return knjiga
-
-
 def dodaj_knjige():
     knjige = ucitaj_knjige()
+    sifra = input("Unesite sifru:")
+    for knjiga in knjige:
+        if knjiga['sifra'] == sifra:
+            print('Knjiga sa unetom sifrom vec postoji!Probajte ponovo!')
+            if (dodaj_knjige() == False):    ##sta ovo znaci
+                return False
+        elif (sifra == 'back'):
+            return False
+    naslov = input('Unesite naslov knjige: ')
+    autor = input('Unesite autora knjige: ')
+    isbn = input('ISBN: ')
+    izdavac = input('Unesite izdavaca: ')
+    godina = int(input('Unesite godinu izdavanja: '))
+    cena = float(input('Unesite cenu knjige: '))
+    kategorija = input('Unesite kojoj kategoriji knjiga pripada: ')
+    broj_strana = int(input('Unesite koliko strana ima knjiga: '))
+    nova_knjiga = {}
+    nova_knjiga['sifra'] = sifra
+    nova_knjiga['naslov'] = naslov
+    nova_knjiga['isbn'] = isbn
+    nova_knjiga['autor'] = autor
+    nova_knjiga['izdavac'] = izdavac
+    nova_knjiga['broj strana'] = broj_strana
+    nova_knjiga['cena'] = cena
+    nova_knjiga['godina'] = godina
+    nova_knjiga['kategorija'] = kategorija
+    nove_knjige = [nova_knjiga]
+    list(nove_knjige)
     while True:
-        knjiga = {}
-        knjiga["sifra"] = input("Unesite novu sifru: ")
-
-        knjiga["naslov"] = input("Unesite naslov knjige: ")
-        knjiga["isbn"] = input("Unesite isbn: ")
-        knjiga["autor"] = input("Unesite autora: ")
-        knjiga["izdavac"] = input("Unesite izdavaca: ")
-        knjiga["broj strana"] = int(input("Unesite koliko strana ima knjiga: "))
-        knjiga["godina"] = int(input("Unesite godinu izdavanja: "))
-        knjiga["cena"] = float(input("Unesite cenu knjige: "))
-        knjiga["kategorija"] = input("Unesite kojoj kategoriji pripada knjiga: ")
-        if provera(knjige, knjiga["sifra"]) is None:
-            knjige.append(knjiga)
+        print("\nDa li zelite da nastavite?\n1. Da\n2. Ne ")
+        stavka = input('Izaberite stavku: ')
+        if (stavka == '1'):
+            print("Nova knjiga je dodata u bazu. ")
+            knjige.append(nova_knjiga)
             break
+        elif (stavka == '2'):
+            return False
         else:
-            print("\nKnjiga sa unetom sifrom vec postoji!Probajte ponovo!")
-        ###kako da cuva knjige u json fajl, da ovo pise posle sifre
+            print("Greska!Pokusajte ponovo!")
+    sacuvaj_knjige(knjige)
 
+def izmeni_knjige():
+    knjige = ucitaj_knjige()
+    x = 0
+    sifra = input("\nUnesite sifru: ")
+    i=0
+    for knjiga in knjige:
+        if(knjiga['sifra'] == sifra):
+            x = 1
+            print("Knjiga je pronadjena.")
+            break
+        i+=1
+    if x == 0:
+        print("Nepostojeca sifra!Probajte ponovo!")
+        if(izmeni_knjige()==False):    ###sta ovo radi
+            return False
+    izmena = {}
+    izmena = knjige[i]
+    z=i
+    izmene = [izmena]
+    list(izmene)
+    print("Ako ne zelite da promenite neku vrednost, ostavite prazno polje.")
+    naslov = input("\nIzmenite naslov: ")
+    if(naslov == " "):
+        naslov = knjige [i]['naslov']
+    autor = input("Izmenite autora: ")
+    if (autor == " "):
+        author = knjige[i]['autor']
+    isbn = input("Izmenite ISBN: ")
+    if (isbn == " "):
+        isbn = knjige[i]['isbn']
+    izdavac = input("Izmenite izdavaca: ")
+    if (izdavac == " "):
+        publisher = knjige[i]['izdavac']
+    godina = int(input("Izmenite godinu: "))
+    if (godina == " "):
+        godina = knjige[i]['godina']
+    cena = float(input("Izmenite cenu: "))
+    if (cena == " "):
+        cena = knjige[i]['cena']
+    kategorija = input("Izmenite kategoriju knjige: ")
+    if (kategorija == ''):
+        kategorija = knjige[i]['kategorija']
+    broj_strana = int(input("Izmenite broj strana: "))
+    if (broj_strana == " "):
+        broj_strana = knjige[i]['pages']
+    nova_knjiga = {}
+    nova_knjiga['id']= sifra
+    nova_knjiga['title'] = naslov
+    nova_knjiga['author'] = autor
+    nova_knjiga['isbn'] = isbn
+    nova_knjiga['publisher']= izdavac
+    nova_knjiga['year'] = godina
+    nova_knjiga['price'] = cena
+    nova_knjiga['genre'] = kategorija
+    nova_knjiga['pages']= broj_strana
+    izmene = [knjige[z],nova_knjiga]
+    list(izmene)
+    while True:
+        print("\nDa li zelite da nastavite?\n1. Da\n2. Ne")
+        stavka = input("Izaberite stavku: ")
+        if(stavka == '1'):
+            knjige[z] = nova_knjiga
+            break
+        elif(stavka == '2'):
+            return False
+        else: print("Greska!Pokusajte ponovo! ")
+
+    sacuvaj_knjige(knjige)
+    return False
