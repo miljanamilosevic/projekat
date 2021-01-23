@@ -1,0 +1,35 @@
+def dodaj_knjige():
+    knjige = ucitaj_knjige()
+    while True:
+        knjiga = {}
+        knjiga["sifra"] = input("Unesite novu sifru: ")
+
+        knjiga["naslov"] = input("Unesite naslov knjige: ")
+        knjiga["isbn"] = input("Unesite isbn: ")
+        knjiga["autor"] = input("Unesite autora: ")
+        knjiga["izdavac"] = input("Unesite izdavaca: ")
+        knjiga["broj strana"] = int(input("Unesite koliko strana ima knjiga: "))
+        knjiga["godina"] = int(input("Unesite godinu izdavanja: "))
+        knjiga["cena"] = float(input("Unesite cenu knjige: "))
+        knjiga["kategorija"] = input("Unesite kojoj kategoriji pripada knjiga: ")
+        if provera(knjige, knjiga["sifra"]) is None:
+            knjige.append(knjige)
+            break
+        else:
+            print("\nKnjiga sa unetom sifrom vec postoji!Probajte ponovo!")
+        ###kako da cuva knjige u json fajl, da ovo pise posle sifre
+
+
+  "sifra": "350497",
+        "naslov": "Medvedgrad",
+        "isbn": "12548946",
+        "autor": "Fredrik Bakman",
+        "izdavac": "Laguna",
+        "broj strana": 447,
+        "godina": 2016,                    ###cemu ovo
+        "cena": 899.00,
+        "kategorija": "Roman",
+
+
+
+"sifra": "100", "naslov": "Izvor", "isbn": "123456789", "autor": "Dr Tara Svort", "izdavac": "Vulkan", "broj strana": 283, "godina": 2019, "cena": 795.0, "kategorija": "Popularna nauka}

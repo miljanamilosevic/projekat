@@ -1,4 +1,80 @@
 from knjige.knjigeIO import ucitaj_knjige, sacuvaj_knjige
+from racun.racunIO import sacuvaj_racune, ucitaj_racune
+from akcije.akcijeIO import ucitaj_akcije
+from datetime import datetime
+
+
+def kreiraj_sifru_racuna(racuni):
+    sifra = racuni[-1]['sifra'] + 1
+    return sifra
+
+
+def prodaja_preko_sifre(racun):
+    knjige = ucitaj_knjige()
+    i = 1
+    for knjiga in knjige:
+        print("{0} - {1}".format(i, knjiga["sifra"]))
+        i += 1
+
+    while True:
+        sifra = input("Unesite sifru knjige ili 'x' za izlaz\n>>>")
+        if sifra == 'x':
+            break
+        for knjiga in knjige:
+            if knjiga['sifra'] == sifra:
+                kolicina = int(input("Unesite kolicinu izabrane knjige:\n>>>"))
+                for i in range(0, kolicina):
+                    racun['knjige'].append(knjiga)
+                    racun['ukupna cena'] += knjiga['cena']
+
+
+
+def prodaja_preko_akcije(racun):
+    akcije = ucitaj_akcije()
+    i = 1
+    for akcija in akcije:
+        print("{0} - {1}".format(i, akcija["sifra"]))
+    while True:
+        sifra = input("Unesite sifru akcije ili 'x' za izlaz\n>>>")
+        if sifra == 'x':
+            break
+        for akcija in akcije:
+            if akcija['sifra'] == int(sifra):
+                #if akcija['datum'] :
+
+                for knjiga in akcija['akcijske knjige']:
+                    racun['knjige'].append(knjiga)
+                    racun['ukupna cena'] += knjiga['cena']
+
+
+
+def prodaja_knjiga(trenutni_korisnik):
+    racuni = ucitaj_racune()
+    now = datetime.now()
+    date_time = now.strftime("%d/%m/%Y, %H:%M")
+    racun = {}
+    racun['sifra'] = kreiraj_sifru_racuna(racuni)
+    racun['prodavac'] = trenutni_korisnik
+    racun['knjige'] = []
+    racun['datum'] = date_time
+    racun['ukupna cena'] = 0
+    while True:
+        print("1 - Unos sifri")
+        print("2 - Unos akcije")
+        print("x - izlaz\n")
+        unos = input(">>>")
+        if unos == 'x':
+            break
+        elif unos == '1':
+            prodaja_preko_sifre(racun)
+        elif unos == '2':
+            prodaja_preko_akcije(racun)
+        else:
+            print("Pogresan unos! Pokusajte ponovo")
+    racuni.append(racun)
+
+    sacuvaj_racune(racuni)
+
 
 
 def pregled_knjiga(knjige):
@@ -164,26 +240,26 @@ def izmeni_knjige():
     knjige = ucitaj_knjige()
     x = 0
     sifra = input("\nUnesite sifru: ")
-    i=0
+    i = 0
     for knjiga in knjige:
-        if(knjiga['sifra'] == sifra):
+        if (knjiga['sifra'] == sifra):
             x = 1
             print("Knjiga je pronadjena.")
             break
-        i+=1
+        i += 1
     if x == 0:
         print("Nepostojeca sifra!Probajte ponovo!")
-        if(izmeni_knjige()==False):    ###sta ovo radi
+        if (izmeni_knjige() == False):  ###sta ovo radi
             return False
     izmena = {}
     izmena = knjige[i]
-    z=i
+    z = i
     izmene = [izmena]
     list(izmene)
     print("Ako ne zelite da promenite neku vrednost, ostavite prazno polje.")
     naslov = input("\nIzmenite naslov: ")
-    if(naslov == " "):
-        naslov = knjige [i]['naslov']
+    if (naslov == " "):
+        naslov = knjige[i]['naslov']
     autor = input("Izmenite autora: ")
     if (autor == " "):
         author = knjige[i]['autor']
@@ -206,26 +282,27 @@ def izmeni_knjige():
     if (broj_strana == " "):
         broj_strana = knjige[i]['pages']
     nova_knjiga = {}
-    nova_knjiga['id']= sifra
+    nova_knjiga['id'] = sifra
     nova_knjiga['title'] = naslov
     nova_knjiga['author'] = autor
     nova_knjiga['isbn'] = isbn
-    nova_knjiga['publisher']= izdavac
+    nova_knjiga['publisher'] = izdavac
     nova_knjiga['year'] = godina
     nova_knjiga['price'] = cena
     nova_knjiga['genre'] = kategorija
-    nova_knjiga['pages']= broj_strana
-    izmene = [knjige[z],nova_knjiga]
+    nova_knjiga['pages'] = broj_strana
+    izmene = [knjige[z], nova_knjiga]
     list(izmene)
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne")
         stavka = input("Izaberite stavku: ")
-        if(stavka == '1'):
+        if (stavka == '1'):
             knjige[z] = nova_knjiga
             break
-        elif(stavka == '2'):
+        elif (stavka == '2'):
             return False
-        else: print("Greska!Pokusajte ponovo! ")
+        else:
+            print("Greska!Pokusajte ponovo! ")
 
     sacuvaj_knjige(knjige)
     return False

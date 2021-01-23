@@ -1,8 +1,8 @@
-from korisnici.korisnici import prijava
-from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige
+from korisnici.korisnici import prijava, registracija
+from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga
 from akcije.akcije import pretrazi_akcije
 
-def meni_administrator():
+def meni_administrator(trenutni_korisnik):
     while True:
         print('\n1.Prikaz svih knjiga')
         print('2.Pretraga knjiga')
@@ -26,7 +26,7 @@ def meni_administrator():
         elif stavka == 4:
             pretrazi_akcije()
         elif stavka == 5:
-            pass
+            registracija()
         elif stavka == 6:
             pass
         elif stavka == 7:
@@ -40,7 +40,7 @@ def meni_administrator():
         else:
             print("Greska!Pokusajte ponovo!")
 
-def meni_menadzer():
+def meni_menadzer(trenutni_korisnik):
     while True:
         print('\n1.Prikaz svih knjiga')
         print('2.Pretraga knjiga')
@@ -75,7 +75,7 @@ def meni_menadzer():
         else:
             print("Greska!Pokusajte ponovo!")
 
-def meni_prodavac():
+def meni_prodavac(trenutni_korisnik):
     while True:
         print('\n1. Prikaz svih knjiga')
         print('2. Pretraga knjiga')
@@ -98,7 +98,7 @@ def meni_prodavac():
         elif stavka == 4:
             pass
         elif stavka == 5:
-            pass
+            prodaja_knjiga(trenutni_korisnik['korisnicko_ime'])
         elif stavka == 6:
             dodaj_knjige()
         elif stavka == 7:
@@ -114,11 +114,11 @@ def main():
     ulogovani_korisnik = prijava()
     if ulogovani_korisnik is not None:
         if ulogovani_korisnik['tip_korisnika'] == 'Administrator':
-            meni_administrator()
+            meni_administrator(ulogovani_korisnik)
         elif ulogovani_korisnik['tip_korisnika'] == 'Prodavac':
-            meni_prodavac()
+            meni_prodavac(ulogovani_korisnik)
         elif ulogovani_korisnik['tip_korisnika'] == 'Menadzer':
-            meni_menadzer()
+            meni_menadzer(ulogovani_korisnik)
     else:
         print('Prijava neuspesna!')
         return

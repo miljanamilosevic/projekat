@@ -1,17 +1,1 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
+[{"sifra": 1, "prodavac": "nevena56", "knjige": [{"sifra": "105", "naslov": "Stranac", "isbn": "111111234", "autor": "Alber Kami", "izdavac": "Kontrast", "broj strana": 113, "godina": 2017, "cena": 599.0, "kategorija": "Klasik"}, {"sifra": "106", "naslov": "Kuga", "isbn": "111111123", "autor": "Alber Kami", "izdavac": "Kontrast", "broj strana": 270, "godina": 2018, "cena": 799.0, "kategorija": "Klasik"}], "datum": "blyat", "ukupna cena": 1398.0}, {"sifra": 2, "prodavac": "nevena56", "knjige": [{"sifra": "100", "naslov": "Izvor", "isbn": "123456789", "autor": "Dr Tara Svort", "izdavac": "Vulkan", "broj strana": 283, "godina": 2019, "cena": 795.0, "kategorija": "Popularna nauka"}, {"sifra": "100", "naslov": "Izvor", "isbn": "123456789", "autor": "Dr Tara Svort", "izdavac": "Vulkan", "broj strana": 283, "godina": 2019, "cena": 795.0, "kategorija": "Popularna nauka"}, {"sifra": "101", "naslov": "Veronika je odlucila da umre", "isbn": "112345678", "autor": "Paulo Koeljo", "izdavac": "Laguna", "broj strana": 222, "godina": 2017, "cena": 799.0, "kategorija": "Drama"}], "datum": "blyat", "ukupna cena": 2389.0}, {"sifra": 3, "prodavac": "nevena56", "knjige": [{"sifra": "104", "naslov": "Central park", "isbn": "111112345", "autor": "Gijom Muso", "izdavac": "Vulkan", "broj strana": 278, "godina": 2019, "cena": 999.0, "kategorija": "Beletristika"}, {"sifra": "104", "naslov": "Central park", "isbn": "111112345", "autor": "Gijom Muso", "izdavac": "Vulkan", "broj strana": 278, "godina": 2019, "cena": 999.0, "kategorija": "Beletristika"}, {"sifra": "105", "naslov": "Stranac", "isbn": "111111234", "autor": "Alber Kami", "izdavac": "Kontrast", "broj strana": 113, "godina": 2017, "cena": 599.0, "kategorija": "Klasik"}, {"sifra": "105", "naslov": "Stranac", "isbn": "111111234", "autor": "Alber Kami", "izdavac": "Kontrast", "broj strana": 113, "godina": 2017, "cena": 599.0, "kategorija": "Klasik"}], "datum": "22/01/2021, 22:41", "ukupna cena": 3196.0}, {"sifra": 4, "prodavac": "nevena56", "knjige": [{"sifra": "100", "naslov": "Izvor", "isbn": "123456789", "autor": "Dr Tara Svort", "izdavac": "Vulkan", "broj strana": 283, "godina": 2019, "cena": 795.0, "kategorija": "Popularna nauka"}], "datum": "22/01/2021, 23:00", "ukupna cena": 795.0}, {"sifra": 5, "prodavac": "nevena56", "knjige": [], "datum": "22/01/2021, 23:01", "ukupna cena": 0}, {"sifra": 6, "prodavac": "nevena56", "knjige": [{"sifra": "100", "naslov": "Izvor", "isbn": "123456789", "autor": "Dr Tara Svort", "izdavac": "Vulkan", "broj strana": 283, "godina": 2019, "cena": 769.0, "kategorija": "Popularna nauka"}, {"sifra": "101", "naslov": "Veronika je odlucila da umre", "isbn": "112345678", "autor": "Paulo Koeljo", "izdavac": "Laguna", "broj strana": 222, "godina": 2017, "cena": 700.0, "kategorija": "Drama"}], "datum": "22/01/2021, 23:03", "ukupna cena": 1469.0}]
