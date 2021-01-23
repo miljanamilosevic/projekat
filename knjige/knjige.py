@@ -15,7 +15,6 @@ def prodaja_preko_sifre(racun):
     for knjiga in knjige:
         print("{0} - {1}".format(i, knjiga["sifra"]))
         i += 1
-
     while True:
         sifra = input("Unesite sifru knjige ili 'x' za izlaz\n>>>")
         if sifra == 'x':
@@ -26,7 +25,6 @@ def prodaja_preko_sifre(racun):
                 for i in range(0, kolicina):
                     racun['knjige'].append(knjiga)
                     racun['ukupna cena'] += knjiga['cena']
-
 
 
 def prodaja_preko_akcije(racun):
@@ -40,12 +38,11 @@ def prodaja_preko_akcije(racun):
             break
         for akcija in akcije:
             if akcija['sifra'] == int(sifra):
-                #if akcija['datum'] :
+                #if akcija['datum vazenja'] :
 
                 for knjiga in akcija['akcijske knjige']:
                     racun['knjige'].append(knjiga)
                     racun['ukupna cena'] += knjiga['cena']
-
 
 
 def prodaja_knjiga(trenutni_korisnik):
@@ -72,9 +69,7 @@ def prodaja_knjiga(trenutni_korisnik):
         else:
             print("Pogresan unos! Pokusajte ponovo")
     racuni.append(racun)
-
     sacuvaj_racune(racuni)
-
 
 
 def pregled_knjiga(knjige):
@@ -96,6 +91,7 @@ def pretrazi_knjige_string(kljuc, vrednost):
 
     return filtrirane_knjige
 
+
 def pretrazi_knjige_brojevi(kljuc, vrednost):
     knjige = ucitaj_knjige()
     filtrirane_knjige = []
@@ -104,6 +100,7 @@ def pretrazi_knjige_brojevi(kljuc, vrednost):
             filtrirane_knjige.append(knjiga)
 
     return filtrirane_knjige
+
 
 def pretrazi_knjige_opseg(kljuc, cenamin, cenamax):
     knjige = ucitaj_knjige()
@@ -151,7 +148,7 @@ def pretrazi_knjige():
         print("Greska!Pokusajte ponovo!")
 
     for knjiga in knjige:
-        print(knjiga)     #prikaz knjiga
+        print(knjiga)    ##prikazi knjige
 
 
 def sortiraj_knjige(kljuc):
@@ -172,11 +169,8 @@ def prikazi_knjige():
     print("3.Sortiraj po autoru.")
     print("4.Sortiraj po izdavacu.")
     print("5.Sortiraj po ceni.")
-
     stavka = int(input("Izaberite opciju: "))
-
     knjige = []
-
     if stavka == 1:
         knjige = sortiraj_knjige("naslov")
     elif stavka == 2:
@@ -189,11 +183,11 @@ def prikazi_knjige():
         knjige = sortiraj_knjige("cena")
     else:
         print("Greska!Izaberite ponovo!")
-
     pregled_knjiga(knjige)
 
 
 def dodaj_knjige():
+    ####
     knjige = ucitaj_knjige()
     sifra = input("Unesite sifru:")
     for knjiga in knjige:
@@ -237,6 +231,7 @@ def dodaj_knjige():
     sacuvaj_knjige(knjige)
 
 def izmeni_knjige():
+    ####
     knjige = ucitaj_knjige()
     x = 0
     sifra = input("\nUnesite sifru: ")
@@ -262,7 +257,7 @@ def izmeni_knjige():
         naslov = knjige[i]['naslov']
     autor = input("Izmenite autora: ")
     if (autor == " "):
-        author = knjige[i]['autor']
+        autor = knjige[i]['autor']
     isbn = input("Izmenite ISBN: ")
     if (isbn == " "):
         isbn = knjige[i]['isbn']
@@ -280,7 +275,7 @@ def izmeni_knjige():
         kategorija = knjige[i]['kategorija']
     broj_strana = int(input("Izmenite broj strana: "))
     if (broj_strana == " "):
-        broj_strana = knjige[i]['pages']
+        broj_strana = knjige[i]['broj strana']
     nova_knjiga = {}
     nova_knjiga['id'] = sifra
     nova_knjiga['title'] = naslov

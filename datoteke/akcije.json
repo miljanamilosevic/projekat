@@ -1,75 +1,42 @@
 [{"sifra": 1 ,
-  "akcijske knjige":
-  [{"sifra": "100",
+  "knjige": {"100":{
 "naslov": "Izvor",
-"isbn": "123456789",
 "autor": "Dr Tara Svort",
-"izdavac": "Vulkan",
-"broj strana": 283,
-"godina": 2019,
-"cena": 769.0,
+"nova cena": 769.0,
 "kategorija": "Popularna nauka"
-},
-{"sifra": "101",
-"naslov": "Veronika je odlucila da umre",
-"isbn": "112345678",
+}, "101": {
+"naslov" : "Veronika je odlucila da umre",
 "autor": "Paulo Koeljo",
-"izdavac": "Laguna",
-"broj strana": 222,
-"godina": 2017,
-"cena": 700.0,
+"nova cena": 700.0,
 "kategorija": "Drama"
-}], "datum": "2021-01-29"},
+}}, "datum vazenja" : "2021-01-29"},
   { "sifra": 2,
-    "akcijske knjige" :
-  [{"sifra": "102",
+    "knjige" : {"102":{
 "naslov": "Papagajeva teorema",
-"isbn": "111234567",
 "autor": "Deni Gedj",
-"izdavac": "Kosmos",
-"broj strana": 508,
-"godina": 2018,
-"cena": 1000.0,
+"nova cena": 1000.0,
 "kategorija": "Popularna nauka"
 },
-{"sifra": "103",
+"103": {
 "naslov": "Skrivena lica",
-"isbn": "111123456",
 "autor": "Salvador Dali",
-"izdavac": "Arete",
-"broj strana": 421,
-"godina": 2018,
-"cena": 1120.0,
+"nova cena": 1120.0,
 "kategorija": "Biografija"
-},
-{"sifra": "104",
+}, "104": {
 "naslov": "Central park",
-"isbn": "111112345",
 "autor": "Gijom Muso",
-"izdavac": "Vulkan",
-"broj strana": 278,
-"godina": 2019,
-"cena": 799.0,
+"nova cena": 799.0,
 "kategorija": "Beletristika"
-}], "datum": "2021-02-03"},
-  { "sifra": 3, "akcijske knjige": [{"sifra": "105",
+}}, "datum vazenja": "2021-02-03"},
+  { "sifra": 3, "knjige": { "105": {
 "naslov": "Stranac",
-"isbn": "111111234",
 "autor": "Alber Kami",
-"izdavac": "Kontrast",
-"broj strana": 113,
-"godina": 2017,
-"cena": 599.0,
+"nova cena": 499.0,
 "kategorija": "Klasik"
-},
-  {"sifra": "106",
+}, "106": {
 "naslov": "Kuga",
-"isbn": "111111123",
 "autor": "Alber Kami",
-"izdavac": "Kontrast",
-"broj strana": 270,
-"godina": 2018,
-"cena": 799.0,
+"nova cena": 699.0,
 "kategorija": "Klasik"
-}], "datum" : "2021-02-20"}
+}} ,"datum vazenja": "2021-03-20"}
 ]

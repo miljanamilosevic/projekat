@@ -1,8 +1,8 @@
 from korisnici.korisnici import prijava, registracija
 from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga
-from akcije.akcije import pretrazi_akcije
-
-def meni_administrator(trenutni_korisnik):
+from akcije.akcije import prikaz_tabele_akcija, pretrazi_akcije
+from akcije.akcijeIO import ucitaj_akcije
+def meni_administrator():
     while True:
         print('\n1.Prikaz svih knjiga')
         print('2.Pretraga knjiga')
@@ -14,15 +14,15 @@ def meni_administrator(trenutni_korisnik):
         print('8.Izmena knjiga')
         print('9.Brisanje knjige')
         print('10. Kraj')
-
+        print("-"*20)
         stavka = int(input("Izaberite stavku:"))
-
+        print("-"*20)
         if stavka == 1:
             prikazi_knjige()
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            pass
+            prikaz_tabele_akcija(ucitaj_akcije())
         elif stavka == 4:
             pretrazi_akcije()
         elif stavka == 5:
@@ -40,7 +40,7 @@ def meni_administrator(trenutni_korisnik):
         else:
             print("Greska!Pokusajte ponovo!")
 
-def meni_menadzer(trenutni_korisnik):
+def meni_menadzer():
     while True:
         print('\n1.Prikaz svih knjiga')
         print('2.Pretraga knjiga')
@@ -114,11 +114,11 @@ def main():
     ulogovani_korisnik = prijava()
     if ulogovani_korisnik is not None:
         if ulogovani_korisnik['tip_korisnika'] == 'Administrator':
-            meni_administrator(ulogovani_korisnik)
+            meni_administrator()
         elif ulogovani_korisnik['tip_korisnika'] == 'Prodavac':
             meni_prodavac(ulogovani_korisnik)
         elif ulogovani_korisnik['tip_korisnika'] == 'Menadzer':
-            meni_menadzer(ulogovani_korisnik)
+            meni_menadzer()
     else:
         print('Prijava neuspesna!')
         return
