@@ -45,6 +45,45 @@ def registracija():
     list(ret_vall)
     sacuvaj_korisnika(korisnici)
 
+def pregled_korisnika(korisnici):
+    zaglavlje = f"{'korisnicko_ime':<10}{'ime':<20}{'prezime':<20}{'tip_korisnika':<20}"
+    print(zaglavlje)
+    print('-' * len(zaglavlje))
+    for korisnik in korisnici:
+        ispis = f"{korisnik['korisnicko_ime']:<10}{korisnik['ime']:<20}{korisnik['prezime']:<20}{korisnik['tip_korisnika']}"
+        print(ispis)
+    print('-' * len(zaglavlje))
+
+
+def sortiraj_knjige(kljuc):
+    korisnici = ucitaj_korisnike()
+
+    for i in range(len(korisnici)):
+        for j in range(len(korisnici)):
+            if korisnici[i][kljuc] < korisnici[j][kljuc]:
+                temp = korisnici[i]
+                korisnici[i] = korisnici[j]
+                korisnici[j] = temp
+    return korisnici
+
+
+def prikazi_korisnike():
+    print("1.Sortiraj po imenu.")
+    print("2.Sortiraj po prezimenu.")
+    print("3.Sortiraj po tipu korisnika.")
+    stavka = int(input("Izaberite opciju: "))
+    korisnici = []
+    if stavka == 1:
+        korisnici = sortiraj_knjige("ime")
+    elif stavka == 2:
+        korisnici = sortiraj_knjige("prezime")
+    elif stavka == 3:
+        korisnici = sortiraj_knjige("tip_korisnika")
+    else:
+        print("Greska!Izaberite ponovo!")
+    pregled_korisnika(korisnici)
+
+
 
 
 

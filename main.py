@@ -1,4 +1,4 @@
-from korisnici.korisnici import prijava, registracija
+from korisnici.korisnici import prijava, registracija, prikazi_korisnike
 from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga
 from akcije.akcije import prikaz_tabele_akcija, pretrazi_akcije
 from akcije.akcijeIO import ucitaj_akcije
@@ -28,7 +28,7 @@ def meni_administrator():
         elif stavka == 5:
             registracija()
         elif stavka == 6:
-            pass
+            prikazi_korisnike()
         elif stavka == 7:
             dodaj_knjige()
         elif stavka == 8:
@@ -59,13 +59,13 @@ def meni_menadzer():
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            pass
+            prikaz_tabele_akcija()
         elif stavka == 4:
             pass
         elif stavka == 5:
-            pass
+            registracija()
         elif stavka == 6:
-            pass
+            prikazi_korisnike()
         elif stavka == 7:
             pass
         elif stavka == 8:
@@ -94,15 +94,15 @@ def meni_prodavac(trenutni_korisnik):
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            pass
+            prikaz_tabele_akcija()
         elif stavka == 4:
-            pass
+            pretrazi_akcije()
         elif stavka == 5:
             prodaja_knjiga(trenutni_korisnik['korisnicko_ime'])
         elif stavka == 6:
             dodaj_knjige()
         elif stavka == 7:
-            pass
+            izmeni_knjige()
         elif stavka == 8:
             pass
         elif stavka == 9:
