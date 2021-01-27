@@ -1,7 +1,10 @@
 from korisnici.korisnici import prijava, registracija, prikazi_korisnike
 from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga
-from akcije.akcije import prikaz_tabele_akcija, pretrazi_akcije
+from akcije.akcije import prikaz_tabele_akcija, pretrazi_akcije, dodavanje_akcijske_ponude
 from akcije.akcijeIO import ucitaj_akcije
+from racun.racuni import kreiranje_izvestaja
+
+
 def meni_administrator():
     while True:
         print('\n1.Prikaz svih knjiga')
@@ -14,31 +17,32 @@ def meni_administrator():
         print('8.Izmena knjiga')
         print('9.Brisanje knjige')
         print('10. Kraj')
-        print("-"*20)
-        stavka = int(input("Izaberite stavku:"))
-        print("-"*20)
-        if stavka == 1:
+        print("-" * 20)
+        stavka = input("Izaberite stavku:")
+        print("-" * 20)
+        if stavka == '1':
             prikazi_knjige()
-        elif stavka == 2:
+        elif stavka == '2':
             pretrazi_knjige()
-        elif stavka == 3:
+        elif stavka == '3':
             prikaz_tabele_akcija(ucitaj_akcije())
-        elif stavka == 4:
+        elif stavka == '4':
             pretrazi_akcije()
-        elif stavka == 5:
+        elif stavka == '5':
             registracija()
-        elif stavka == 6:
+        elif stavka == '6':
             prikazi_korisnike()
-        elif stavka == 7:
+        elif stavka == '7':
             dodaj_knjige()
-        elif stavka == 8:
+        elif stavka == '8':
             izmeni_knjige()
-        elif stavka == 9:
+        elif stavka == '9':
             pass
-        elif stavka == 10:
+        elif stavka == '10':
             return
         else:
             print("Greska!Pokusajte ponovo!")
+
 
 def meni_menadzer():
     while True:
@@ -52,28 +56,29 @@ def meni_menadzer():
         print('8.Kreiranje izvestaja')
         print('9. Kraj')
 
-        stavka = int(input("Izaberite stavku:"))
+        stavka = input("Izaberite stavku:")
 
-        if stavka == 1:
+        if stavka == '1':
             prikazi_knjige()
-        elif stavka == 2:
+        elif stavka == '2':
             pretrazi_knjige()
-        elif stavka == 3:
-            prikaz_tabele_akcija()
-        elif stavka == 4:
-            pass
-        elif stavka == 5:
+        elif stavka == '3':
+            prikaz_tabele_akcija(ucitaj_akcije())
+        elif stavka == '4':
+            pretrazi_akcije()
+        elif stavka == '5':
             registracija()
-        elif stavka == 6:
+        elif stavka == '6':
             prikazi_korisnike()
-        elif stavka == 7:
-            pass
-        elif stavka == 8:
-            pass
-        elif stavka == 9:
+        elif stavka == '7':
+            dodavanje_akcijske_ponude()
+        elif stavka == '8':
+            kreiranje_izvestaja()
+        elif stavka == '9':
             return
         else:
             print("Greska!Pokusajte ponovo!")
+
 
 def meni_prodavac(trenutni_korisnik):
     while True:
@@ -87,28 +92,29 @@ def meni_prodavac(trenutni_korisnik):
         print('8. Brisanje knjige')
         print('9. Kraj')
 
-        stavka = int(input("Izaberite stavku:"))
+        stavka = input("Izaberite stavku:")
 
-        if stavka == 1:
+        if stavka == '1':
             prikazi_knjige()
-        elif stavka == 2:
+        elif stavka == '2':
             pretrazi_knjige()
-        elif stavka == 3:
-            prikaz_tabele_akcija()
-        elif stavka == 4:
+        elif stavka == '3':
+            prikaz_tabele_akcija(ucitaj_akcije())
+        elif stavka == '4':
             pretrazi_akcije()
-        elif stavka == 5:
+        elif stavka == '5':
             prodaja_knjiga(trenutni_korisnik['korisnicko_ime'])
-        elif stavka == 6:
+        elif stavka == '6':
             dodaj_knjige()
-        elif stavka == 7:
+        elif stavka == '7':
             izmeni_knjige()
-        elif stavka == 8:
+        elif stavka == '8':
             pass
-        elif stavka == 9:
+        elif stavka == '9':
             return
         else:
             print("Greska!Pokusajte ponovo!")
+
 
 def main():
     ulogovani_korisnik = prijava()

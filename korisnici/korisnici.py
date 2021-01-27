@@ -26,20 +26,23 @@ def registracija():
     lozinka = input("Unesite lozinku: ")
     ime = input("Unesite ime korisnika: ")
     prezime = input("Unesite prezime korisnika: ")
-    stavka = input("1.Menadzer \n2.Prodavac \nIzaberite opciju:  ")
-    stavka1 = ("Menadzer")
-    stavka2 = ("Prodavac")
-    ret_val = {}
-    ret_val['korisnicko_ime'] = korisnicko_ime
-    ret_val['lozinka'] = lozinka
-    ret_val['ime'] = ime
-    ret_val['prezime'] = prezime
-    if stavka == "1":
-        ret_val['tip_korisnika'] = stavka1
-    elif stavka == "2":
-        ret_val['tip_korisnika'] = stavka2
-    else:
-        print("Greska!Izaberite ponovo!")
+    while True:
+        stavka = input("1.Menadzer \n2.Prodavac \nIzaberite opciju:  ")
+        stavka1 = ("Menadzer")
+        stavka2 = ("Prodavac")
+        ret_val = {}
+        ret_val['korisnicko_ime'] = korisnicko_ime
+        ret_val['lozinka'] = lozinka
+        ret_val['ime'] = ime
+        ret_val['prezime'] = prezime
+        if stavka == "1":
+            ret_val['tip_korisnika'] = stavka1
+            break
+        elif stavka == "2":
+            ret_val['tip_korisnika'] = stavka2
+            break
+        else:
+            print("Greska!Izaberite ponovo!")
     korisnici.append(ret_val)
     ret_vall = [ret_val]
     list(ret_vall)
@@ -71,17 +74,22 @@ def prikazi_korisnike():
     print("1.Sortiraj po imenu.")
     print("2.Sortiraj po prezimenu.")
     print("3.Sortiraj po tipu korisnika.")
-    stavka = int(input("Izaberite opciju: "))
-    korisnici = []
-    if stavka == 1:
-        korisnici = sortiraj_knjige("ime")
-    elif stavka == 2:
-        korisnici = sortiraj_knjige("prezime")
-    elif stavka == 3:
-        korisnici = sortiraj_knjige("tip_korisnika")
-    else:
-        print("Greska!Izaberite ponovo!")
+    while True:
+        stavka = input("Izaberite opciju: ")
+        korisnici = []
+        if stavka == '1':
+            korisnici = sortiraj_knjige("ime")
+            break
+        elif stavka == '2':
+            korisnici = sortiraj_knjige("prezime")
+            break
+        elif stavka == '3':
+            korisnici = sortiraj_knjige("tip_korisnika")
+            break
+        else:
+            print("Greska!Izaberite ponovo!")
     pregled_korisnika(korisnici)
+
 
 
 

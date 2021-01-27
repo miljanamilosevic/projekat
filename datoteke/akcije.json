@@ -1,42 +1,97 @@
-[{"sifra": 1 ,
-  "knjige": {"100":{
-"naslov": "Izvor",
-"autor": "Dr Tara Svort",
-"nova cena": 769.0,
-"kategorija": "Popularna nauka"
-}, "101": {
-"naslov" : "Veronika je odlucila da umre",
-"autor": "Paulo Koeljo",
-"nova cena": 700.0,
-"kategorija": "Drama"
-}}, "datum vazenja" : "2021-01-29"},
-  { "sifra": 2,
-    "knjige" : {"102":{
-"naslov": "Papagajeva teorema",
-"autor": "Deni Gedj",
-"nova cena": 1000.0,
-"kategorija": "Popularna nauka"
-},
-"103": {
-"naslov": "Skrivena lica",
-"autor": "Salvador Dali",
-"nova cena": 1120.0,
-"kategorija": "Biografija"
-}, "104": {
-"naslov": "Central park",
-"autor": "Gijom Muso",
-"nova cena": 799.0,
-"kategorija": "Beletristika"
-}}, "datum vazenja": "2021-02-03"},
-  { "sifra": 3, "knjige": { "105": {
-"naslov": "Stranac",
-"autor": "Alber Kami",
-"nova cena": 499.0,
-"kategorija": "Klasik"
-}, "106": {
-"naslov": "Kuga",
-"autor": "Alber Kami",
-"nova cena": 699.0,
-"kategorija": "Klasik"
-}} ,"datum vazenja": "2021-03-20"}
+[
+    {
+        "datum isteka": "2021-04-15",
+        "knjige": [
+            {
+                "autor": "Deni Gedj",
+                "broj strana": 508,
+                "cena": 251.0,
+                "godina": 2018,
+                "isbn": "111234567",
+                "izdavac": "Kosmos",
+                "kategorija": "Popularna nauka",
+                "naslov": "Papagajeva teorema",
+                "sifra": "102"
+            },
+            {
+                "autor": "Gijom Muso",
+                "broj strana": 278,
+                "cena": 500.0,
+                "godina": 2019,
+                "isbn": "111112345",
+                "izdavac": "Vulkan",
+                "kategorija": "Beletristika",
+                "naslov": "Central park",
+                "sifra": "104"
+            }
+        ],
+        "sifra": 1
+    },
+    {
+        "datum isteka": "2021-01-15",
+        "knjige": [
+            {
+                "autor": "Alber Kami",
+                "broj strana": 113,
+                "cena": 262.0,
+                "godina": 2017,
+                "isbn": "111111234",
+                "izdavac": "Kontrast",
+                "kategorija": "Klasik",
+                "naslov": "Stranac",
+                "sifra": "105"
+            },
+            {
+                "autor": "Kamij Obre",
+                "broj strana": 302,
+                "cena": 600.0,
+                "godina": 2016,
+                "isbn": "0001111111",
+                "izdavac": "Vulkan",
+                "kategorija": "Beletristika",
+                "naslov": "Pikasova unuka",
+                "sifra": "111"
+            },
+            {
+                "autor": "Dr Dzordan Piterson",
+                "broj strana": 394,
+                "cena": 250.0,
+                "godina": 2018,
+                "isbn": "0011111111",
+                "izdavac": "Harmonija knjiga",
+                "kategorija": "Popularna psihologija",
+                "naslov": "12 pravila za zivot",
+                "sifra": "110"
+            }
+        ],
+        "sifra": 2
+    },
+    {
+        "datum isteka": "2021-04-15",
+        "knjige": [
+            {
+                "autor": "Alber Kami",
+                "broj strana": 113,
+                "cena": 650.0,
+                "godina": 2017,
+                "isbn": "111111234",
+                "izdavac": "Kontrast",
+                "kategorija": "Klasik",
+                "naslov": "Stranac",
+                "sifra": "105"
+            },
+            {
+                "autor": "Federiko Aksat",
+                "broj strana": 447,
+                "cena": 360.0,
+                "godina": 2016,
+                "isbn": "111111112",
+                "izdavac": "Laguna",
+                "kategorija": "Triler",
+                "naslov": "Ubistvo je izlaz",
+                "sifra": "107"
+            }
+        ],
+        "sifra": 3
+    }
 ]
