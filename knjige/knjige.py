@@ -12,7 +12,7 @@ def kreiraj_sifru_racuna(racuni):
 
 def unos_kolicine():
     try:
-        kolicina = int(input("Unesite kolicinu izabrane knjige:\n>>>"))
+        kolicina = int(input("Unesite kolicinu izabrane knjige: "))
         return kolicina
     except:
         print('Pogresan unos! Postavljena podrazumevana kolicina - 1')
@@ -26,7 +26,7 @@ def prodaja_preko_sifre(racun):
         print("{0} - {1}".format(i, knjiga["sifra"]))
         i += 1
     while True:
-        sifra = input("Unesite sifru knjige ili 'x' za izlaz\n>>>")
+        sifra = input("Unesite sifru knjige ili 'x' za izlaz: ")
         if sifra == 'x':
             break
         for knjiga in knjige:
@@ -45,7 +45,7 @@ def prodaja_preko_akcije(racun):
         print("{0} - {1}".format(i, akcija["sifra"]))
         i += 1
     while True:
-        sifra = input("Unesite sifru akcije ili 'x' za izlaz\n>>>")
+        sifra = input("Unesite sifru akcije ili 'x' za izlaz: ")
         if sifra == 'x':
             break
         for akcija in akcije:
@@ -56,7 +56,7 @@ def prodaja_preko_akcije(racun):
                         racun['knjige'].append(knjiga)
                         racun['ukupna cena'] += knjiga['cena']
                 else:
-                    print("Akcija je istekla :(")
+                    print("Akcija je istekla. :(")
 
 
 def prikaz_korpe(racun):
@@ -81,16 +81,16 @@ def prodaja_knjiga(trenutni_korisnik):
         print("3 - Prikaz korpe")
         print("4 - Zavrsi prodaju")
         print("x - Odustani od prodaje\n")
-        unos = input(">>>")
-        if unos == '4':
+        stavka = input("Izaberite stavku: ")
+        if stavka == '4':
             break
-        elif unos == '1':
+        elif stavka == '1':
             prodaja_preko_sifre(racun)
-        elif unos == '2':
+        elif stavka == '2':
             prodaja_preko_akcije(racun)
-        elif unos == '3':
+        elif stavka == '3':
             prikaz_korpe(racun)
-        elif unos == 'x':
+        elif stavka == 'x':
             return
         else:
             print("Pogresan unos! Pokusajte ponovo")
@@ -114,7 +114,6 @@ def pretrazi_knjige_string(kljuc, vrednost):
     for knjiga in knjige:
         if vrednost.lower() in knjiga[kljuc].lower():
             filtrirane_knjige.append(knjiga)
-
     return filtrirane_knjige
 
 
@@ -134,7 +133,6 @@ def pretrazi_knjige_opseg(kljuc, cenamin, cenamax):
     for knjiga in knjige:
         if cenamin <= knjiga[kljuc] and cenamax >= knjiga[kljuc]:
             filtrirane_knjige.append(knjiga)
-
     return filtrirane_knjige
 
 
@@ -144,7 +142,7 @@ def pretrazi_knjige():
     print("3.Pretrazi po autoru.")
     print("4.Pretrazi po kategoriji.")
     print("5. Pretrazi po izdavacu.")
-    print("6.Pretrazi po opsegu cene.")  ######
+    print("6.Pretrazi po opsegu cene.")
 
     stavka = input("Izaberite stavku:")
     knjige = []
@@ -176,7 +174,7 @@ def pretrazi_knjige():
         print("Greska!Pokusajte ponovo!")
 
     for knjiga in knjige:
-        print(knjiga)  ##prikazi knjige
+        print(knjiga)  ##prikazi knjige-pregled knjiga?
 
 
 def sortiraj_knjige(kljuc):
@@ -249,11 +247,11 @@ def dodaj_knjige():
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne ")
         stavka = input('Izaberite stavku: ')
-        if (stavka == '1'):
+        if stavka == '1':
             print("Nova knjiga je dodata u bazu. ")
             knjige.append(nova_knjiga)
             break
-        elif (stavka == '2'):
+        elif stavka == '2':
             return False
         else:
             print("Greska!Pokusajte ponovo!")
@@ -323,10 +321,10 @@ def izmeni_knjige():
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne")
         stavka = input("Izaberite stavku: ")
-        if (stavka == '1'):
+        if stavka == '1':
             knjige[z] = nova_knjiga
             break
-        elif (stavka == '2'):
+        elif stavka == '2':
             return False
         else:
             print("Greska!Pokusajte ponovo! ")

@@ -55,8 +55,9 @@ def meni_menadzer():
         print('7.Dodavanje akcijske ponude')
         print('8.Kreiranje izvestaja')
         print('9. Kraj')
-
+        print("-" * 20)
         stavka = input("Izaberite stavku:")
+        print("-" * 20)
 
         if stavka == '1':
             prikazi_knjige()
@@ -91,8 +92,9 @@ def meni_prodavac(trenutni_korisnik):
         print('7. Izmena knjige')
         print('8. Brisanje knjige')
         print('9. Kraj')
-
+        print("-" * 20)
         stavka = input("Izaberite stavku:")
+        print("-" * 20)
 
         if stavka == '1':
             prikazi_knjige()

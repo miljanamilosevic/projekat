@@ -7,10 +7,8 @@ from racun.racunIO import ucitaj_racune
 
 def prikaz_tabele_akcija(akcije):
     zaglavlje = f"{'sifra':<5}{'datum isteka':<10}{'naslov':<30}{'autor':<25}{'kategorija':<15}{'nova cena':<7}"
-
     print(zaglavlje)
     print('-' * len(zaglavlje))
-
     for akcija in akcije:
         ispis = f"{akcija['sifra']:<5}{akcija['datum isteka']:<10}"
         print(ispis)
@@ -52,7 +50,6 @@ def sortiran_prikaz_tabele_akcija(akcije):
 
 def sortiraj_akcije():
     akcije = ucitaj_akcije()
-
     for i in range(len(akcije)):
         for j in range(len(akcije)):
             if akcije[i]['sifra'] < akcije[j]['sifra']:
@@ -65,7 +62,6 @@ def sortiraj_akcije():
 
 def sortiraj_akcije_po_datumu():
     akcije = ucitaj_akcije()
-
     for i in range(len(akcije)):
         for j in range(len(akcije)):
             if datetime.datetime.strptime(akcije[i]['datum isteka'], "%Y-%m-%d") < datetime.datetime.strptime(
@@ -80,7 +76,6 @@ def sortiraj_akcije_po_datumu():
 def pretraga_akcija_string(kljuc, vrednost):
     akcije = ucitaj_akcije()
     filtrirane_akcije = []
-
     for akcija in akcije:
         pronadjena = False
         for knjiga in akcija['knjige']:
