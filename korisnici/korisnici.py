@@ -71,9 +71,11 @@ def sortiraj_knjige(kljuc):
 
 
 def prikazi_korisnike():
+    print("==============================")
     print("1.Sortiraj po imenu.")
     print("2.Sortiraj po prezimenu.")
     print("3.Sortiraj po tipu korisnika.")
+    print("==============================")
     while True:
         stavka = input("Izaberite opciju: ")
         korisnici = []

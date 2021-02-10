@@ -1,5 +1,5 @@
 from korisnici.korisnici import prijava, registracija, prikazi_korisnike
-from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga
+from knjige.knjige import prikazi_knjige, ucitaj_knjige, pretrazi_knjige, dodaj_knjige, izmeni_knjige, prodaja_knjiga, obrisi_knjigu
 from akcije.akcije import prikaz_tabele_akcija, pretrazi_akcije, dodavanje_akcijske_ponude
 from akcije.akcijeIO import ucitaj_akcije
 from racun.racuni import kreiranje_izvestaja
@@ -37,7 +37,7 @@ def meni_administrator():
         elif stavka == '8':
             izmeni_knjige()
         elif stavka == '9':
-            pass
+            obrisi_knjigu()
         elif stavka == '10':
             return
         else:
@@ -111,7 +111,7 @@ def meni_prodavac(trenutni_korisnik):
         elif stavka == '7':
             izmeni_knjige()
         elif stavka == '8':
-            pass
+            obrisi_knjigu()
         elif stavka == '9':
             return
         else:
@@ -119,6 +119,11 @@ def meni_prodavac(trenutni_korisnik):
 
 
 def main():
+    print("=================================")
+    print("Dobro dosli u nasu malu knjizaru!")
+    print("=================================")
+    print("\n===========Ulogujte se===========")
+    print()
     ulogovani_korisnik = prijava()
     if ulogovani_korisnik is not None:
         if ulogovani_korisnik['tip_korisnika'] == 'Administrator':

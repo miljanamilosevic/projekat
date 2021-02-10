@@ -8,6 +8,7 @@
         "izdavac": "Vulkan",
         "kategorija": "Popularna nauka",
         "naslov": "Izvor",
+        "obrisana": false,
         "sifra": "100"
     },
     {
@@ -19,18 +20,20 @@
         "izdavac": "Laguna",
         "kategorija": "Drama",
         "naslov": "Veronika je odlucila da umre",
+        "obrisana": false,
         "sifra": "101"
     },
     {
         "autor": "Deni Gedj",
-        "kategorija": "Popularna nauka",
-        "sifra": "102",
-        "isbn": "215561612",
         "broj strana": 508,
         "cena": 1100.0,
+        "godina": 2018,
+        "isbn": "215561612",
         "izdavac": "Kosmos",
+        "kategorija": "Popularna nauka",
         "naslov": "Papagajeva teorema",
-        "godina": 2018
+        "obrisana": false,
+        "sifra": "102"
     },
     {
         "autor": "Salvador Dali",
@@ -41,6 +44,7 @@
         "izdavac": "Arete",
         "kategorija": "Biografija",
         "naslov": "Skrivena lica",
+        "obrisana": false,
         "sifra": "103"
     },
     {
@@ -52,6 +56,7 @@
         "izdavac": "Vulkan",
         "kategorija": "Beletristika",
         "naslov": "Central park",
+        "obrisana": false,
         "sifra": "104"
     },
     {
@@ -63,6 +68,7 @@
         "izdavac": "Kontrast",
         "kategorija": "Klasik",
         "naslov": "Stranac",
+        "obrisana": false,
         "sifra": "105"
     },
     {
@@ -74,6 +80,7 @@
         "izdavac": "Kontrast",
         "kategorija": "Klasik",
         "naslov": "Kuga",
+        "obrisana": false,
         "sifra": "106"
     },
     {
@@ -85,6 +92,7 @@
         "izdavac": "Laguna",
         "kategorija": "Triler",
         "naslov": "Ubistvo je izlaz",
+        "obrisana": false,
         "sifra": "107"
     },
     {
@@ -96,6 +104,7 @@
         "izdavac": "Dereta",
         "kategorija": "Drama",
         "naslov": "Ne daj mi nikada da odem",
+        "obrisana": false,
         "sifra": "108"
     },
     {
@@ -107,6 +116,7 @@
         "izdavac": "Laguna",
         "kategorija": "Popularna psihologija",
         "naslov": "Tihi ljudi",
+        "obrisana": false,
         "sifra": "109"
     },
     {
@@ -118,6 +128,7 @@
         "izdavac": "Harmonija knjiga",
         "kategorija": "Popularna psihologija",
         "naslov": "12 pravila za zivot",
+        "obrisana": false,
         "sifra": "110"
     },
     {
@@ -129,50 +140,19 @@
         "izdavac": "Vulkan",
         "kategorija": "Beletristika",
         "naslov": "Pikasova unuka",
+        "obrisana": true,
         "sifra": "111"
-    },
-    {
-        "autor": "1",
-        "broj strana": 1,
-        "cena": 1.0,
-        "godina": 1,
-        "isbn": "1",
-        "izdavac": "1",
-        "kategorija": "1",
-        "naslov": "1",
-        "sifra": "134"
-    },
-    {
-        "autor": "1",
-        "broj strana": 1,
-        "cena": 1.0,
-        "godina": 1,
-        "isbn": "1",
-        "izdavac": "1",
-        "kategorija": "1",
-        "naslov": "1",
-        "sifra": "124"
-    },
-    {
-        "autor": "2",
-        "broj strana": 8,
-        "cena": 6.0,
-        "godina": 5,
-        "isbn": "3",
-        "izdavac": "4",
-        "kategorija": "7",
-        "naslov": "1",
-        "sifra": "169"
     },
     {
         "autor": "Dostojevski",
         "broj strana": 1000,
         "cena": 500.0,
         "godina": 2016,
-        "isbn": "1",
+        "isbn": "0000111111",
         "izdavac": "Vulkan",
         "kategorija": "Roman",
         "naslov": "Braca Karamazovi",
-        "sifra": "125"
+        "obrisana": true,
+        "sifra": "112"
     }
 ]

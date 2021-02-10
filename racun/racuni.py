@@ -113,27 +113,27 @@ def ukupna_prodaja_po_kljucu(kljuc, vrednost):
 
 def kreiranje_izvestaja():
     while True:
+        print("==========================================================")
         print("1.Ukupna prodaja svih knjiga.")
         print("2.Ukupna prodaja svih akcija.")
         print("3.Ukupna prodaja svih knjiga po odredjenom kriterijumu.")
         print("x. Izlaz")
+        print("==========================================================")
         opcija = input("Unesite opciju: ")
-
 
         if opcija == 'x':
             break
         elif opcija == '1':
             ukupna_prodaja_knjiga()
-
         elif opcija == '2':
             ukupna_prodaja_akcija()
-
-
         elif opcija == '3':
             while True:
+                print("=============================")
                 print("1. Izvestaj po autoru")
                 print("2. Izvestaj po izdavacu")
                 print("3. Izvestaj po kategoriji")
+                print("=============================")
                 opcija = input('\n>>>')
 
                 if opcija == '1':

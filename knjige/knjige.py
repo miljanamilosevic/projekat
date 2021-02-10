@@ -137,13 +137,14 @@ def pretrazi_knjige_opseg(kljuc, cenamin, cenamax):
 
 
 def pretrazi_knjige():
+    print("============================")
     print("1. Pretrazi po sifri.")
     print("2.Pretrazi po naslovu.")
     print("3.Pretrazi po autoru.")
     print("4.Pretrazi po kategoriji.")
     print("5. Pretrazi po izdavacu.")
     print("6.Pretrazi po opsegu cene.")
-
+    print("============================")
     stavka = input("Izaberite stavku:")
     knjige = []
     if stavka == '1':
@@ -190,11 +191,13 @@ def sortiraj_knjige(kljuc):
 
 
 def prikazi_knjige():
+    print("===============================")
     print("1.Sortiraj po naslovu knjige.")
     print("2.Sortiraj po kategoriji.")
     print("3.Sortiraj po autoru.")
     print("4.Sortiraj po izdavacu.")
     print("5.Sortiraj po ceni.")
+    print("===============================")
     stavka = input("Izaberite opciju: ")
     knjige = []
     if stavka == '1':
@@ -209,6 +212,7 @@ def prikazi_knjige():
         knjige = sortiraj_knjige("cena")
     else:
         print("Greska!Izaberite ponovo!")
+    print("=========Lista knjiga========== \n")
     pregled_knjiga(knjige)
 
 
@@ -331,3 +335,15 @@ def izmeni_knjige():
 
     sacuvaj_knjige(knjige)
     return False
+
+def obrisi_knjigu():
+    knjige = ucitaj_knjige()
+    sifra = input("\nUnesite sifru knjige koju zelite da obrisete ili 'x' za povratak: ")
+    if sifra == 'x':
+        return
+    else:
+        for knjiga in knjige:
+            if knjiga['sifra'] == sifra :
+                knjiga['obrisana'] = True
+                print('%s je obrisana u bazi podataka. ' % knjiga['naslov'])
+        sacuvaj_knjige(knjige)

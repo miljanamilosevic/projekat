@@ -103,14 +103,14 @@ def pretraga_akcija_jednakost(vrednost):
 def pretrazi_akcije():
     akcije = ucitaj_akcije()
     while True:
-        print('-' * 20)
+        print('=' * 20)
         print("\n1. Pretraga po sifri")
         print("2. Pretraga po artiklu")
         print("3. Pretraga po autoru")
         print("4. Pretraga po kategoriji")
-        print('-' * 20)
+        print('=' * 20)
         stavka = input("Izaberite stavku: ")
-        print('-' * 20)
+        print('=' * 20)
         akcije = []
         if stavka == '1':
             sifra = int(input("Unesite sifru: "))
