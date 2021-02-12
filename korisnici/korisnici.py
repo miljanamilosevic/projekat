@@ -5,12 +5,12 @@ from korisnici.korisniciIO import ucitaj_korisnike, sacuvaj_korisnika
 def prijava():
     korisnici = ucitaj_korisnike()
     for i in range(3):
-        korisnicko_ime = input("korisnicko ime ili 'x' za izlaz:")
+        korisnicko_ime = input("Unesite korisnicko ime ili 'x' za izlaz: ")
         if korisnicko_ime == 'x':
             korisnik = {}
             korisnik['tip_korisnika'] = 'Izlaz'
             return korisnik
-        lozinka = input("lozinka:")
+        lozinka = input("Unesite lozinku: ")
 
         for korisnik in korisnici:
             if korisnik['korisnicko_ime'] == korisnicko_ime and korisnik['lozinka'] == lozinka:

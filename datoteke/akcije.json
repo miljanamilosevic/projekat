@@ -123,5 +123,23 @@
             }
         ],
         "sifra": 4
+    },
+    {
+        "datum isteka": "2021-03-20",
+        "knjige": [
+            {
+                "autor": "Branko Golubovic",
+                "broj strana": 120,
+                "cena": 700.0,
+                "godina": 2011,
+                "isbn": "9788691261900",
+                "izdavac": "Demoprint 95",
+                "kategorija": "Biografija",
+                "naslov": "Pisma iz Avganistana",
+                "obrisana": false,
+                "sifra": "113"
+            }
+        ],
+        "sifra": 5
     }
 ]

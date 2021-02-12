@@ -2,7 +2,6 @@ from akcije.akcijeIO import ucitaj_akcije, sacuvaj_akcije
 from datetime import datetime
 from knjige.knjigeIO import ucitaj_knjige
 import datetime
-from racun.racunIO import ucitaj_racune
 
 
 def prikaz_tabele_akcija(akcije):
@@ -16,10 +15,13 @@ def prikaz_tabele_akcija(akcije):
             ispis = '\t\t\t\t\t' + f" {knjiga['naslov']:<30}{knjiga['autor']:<25}{knjiga['kategorija']:<15}{knjiga['cena']:<7}"
             print(ispis)
     while True:
-        print('\n1.Sortirati akcije po sifri.')
-        print('2.Sortirati akcije po datumu.')
+        print()
+        print('=' * 30)
+        print("1.Sortirati akcije po sifri.")
+        print("2.Sortirati akcije po datumu.")
+        print('=' * 30)
         stavka = input("Izaberite stavku: ")
-        print('***' * 20)
+        print('=' * 30)
         if stavka == "1":
             sortiran_prikaz_tabele_akcija(sortiraj_akcije())
             break
@@ -91,26 +93,26 @@ def pretraga_akcija_string(kljuc, vrednost):
 def pretraga_akcija_jednakost(vrednost):
     akcije = ucitaj_akcije()
     filtritane_akcije = []
-
     for akcija in akcije:
         if vrednost == akcija['sifra']:
             filtritane_akcije.append(akcija)
     if filtritane_akcije == []:
-        print('Neuspesna pretraga! Ne postoji akcija sa unetom sifrom')
+        print("Neuspesna pretraga! Ne postoji akcija sa unetom sifrom. ")
     return filtritane_akcije
 
 
 def pretrazi_akcije():
     akcije = ucitaj_akcije()
     while True:
-        print('=' * 20)
-        print("\n1. Pretraga po sifri")
+        print()
+        print('=' * 30)
+        print("1. Pretraga po sifri")
         print("2. Pretraga po artiklu")
         print("3. Pretraga po autoru")
         print("4. Pretraga po kategoriji")
-        print('=' * 20)
+        print('=' * 30)
         stavka = input("Izaberite stavku: ")
-        print('=' * 20)
+        print('=' * 30)
         akcije = []
         if stavka == '1':
             sifra = int(input("Unesite sifru: "))
@@ -130,13 +132,12 @@ def pretrazi_akcije():
             break
         else:
             print("Pogresan unos")
-
     prikaz_tabele_akcija(akcije)
 
 
 def unos_cene():
     while True:
-        cena = input("\n>>>")
+        cena = input(">>>")
         try:
             float(cena)
             return cena
@@ -157,12 +158,12 @@ def dodavanje_akcijske_ponude():
             break
         for knjiga in knjige:
             if sifra_knjige == knjiga['sifra']:
-                print("Unesite cenu knjige")
+                print("Unesite cenu knjige: ")
                 cena_knjige = unos_cene()
                 knjiga['cena'] = float(cena_knjige)
+                akcija['datum isteka'] = input("Unesite datum isteka (y-m-d): ")
                 akcija['knjige'].append(knjiga)
                 print("Uspesno dodavanje knjige!")
-    akcija['datum isteka'] = '2020-04-15'
     akcije.append(akcija)
     sacuvaj_akcije(akcije)
 

@@ -93,7 +93,7 @@ def prodaja_knjiga(trenutni_korisnik):
         elif stavka == 'x':
             return
         else:
-            print("Pogresan unos! Pokusajte ponovo")
+            print("Pogresan unos! Pokusajte ponovo! ")
     racuni.append(racun)
     sacuvaj_racune(racuni)
 
@@ -139,21 +139,21 @@ def pretrazi_knjige_opseg(kljuc, cenamin, cenamax):
 
 
 def pretrazi_knjige():
-    print("============================")
+    print("=" * 30)
     print("1. Pretrazi po sifri.")
     print("2.Pretrazi po naslovu.")
     print("3.Pretrazi po autoru.")
     print("4.Pretrazi po kategoriji.")
     print("5. Pretrazi po izdavacu.")
     print("6.Pretrazi po opsegu cene.")
-    print("============================")
-    stavka = input("Izaberite stavku:")
+    print("=" * 30)
+    stavka = input("Izaberite stavku: ")
     knjige = []
     if stavka == '1':
         sifra = input("Unesite sifru: ")
         knjige = pretrazi_knjige_brojevi('sifra', sifra)
     elif stavka == '2':
-        naslov = input("Unesite naslov")
+        naslov = input("Unesite naslov: ")
         knjige = pretrazi_knjige_string('naslov', naslov)
     elif stavka == '3':
         autor = input("Unesite autora: ")
@@ -165,9 +165,9 @@ def pretrazi_knjige():
         izdavac = input("Unesite izdavaca: ")
         knjige = pretrazi_knjige_string('izdavac', izdavac)
     elif stavka == '6':
-        print('Unesite minimalnu cenu')
+        print("Unesite minimalnu cenu: ")
         cena1 = unos_cene()
-        print("Unesite maksimalnu cenu")
+        print("Unesite maksimalnu cenu: ")
         cena2 = unos_cene()
         if cena2 < cena1:
             knjige = pretrazi_knjige_opseg('cena', cena2, cena1)
@@ -192,13 +192,13 @@ def sortiraj_knjige(kljuc):
 
 
 def prikazi_knjige():
-    print("===============================")
+    print("=" * 30)
     print("1.Sortiraj po naslovu knjige.")
     print("2.Sortiraj po kategoriji.")
     print("3.Sortiraj po autoru.")
     print("4.Sortiraj po izdavacu.")
     print("5.Sortiraj po ceni.")
-    print("===============================")
+    print("=" * 30)
     stavka = input("Izaberite opciju: ")
     knjige = []
     if stavka == '1':
@@ -218,27 +218,26 @@ def prikazi_knjige():
 
 
 def dodaj_knjige():
-    ####
     knjige = ucitaj_knjige()
     while True:
-        sifra = input("Unesite sifru:")
+        sifra = input("Unesite sifru: ")
         postoji = False
         for knjiga in knjige:
             if knjiga['sifra'] == sifra:
-                print('Knjiga sa unetom sifrom vec postoji!Probajte ponovo!')
+                print("Knjiga sa unetom sifrom vec postoji!Probajte ponovo!")
                 postoji = True
                 break
         if not postoji:
             break
 
-    naslov = input('Unesite naslov knjige: ')
-    autor = input('Unesite autora knjige: ')
-    isbn = input('ISBN: ')
-    izdavac = input('Unesite izdavaca: ')
-    godina = int(input('Unesite godinu izdavanja: '))
-    cena = float(input('Unesite cenu knjige: '))
-    kategorija = input('Unesite kojoj kategoriji knjiga pripada: ')
-    broj_strana = int(input('Unesite koliko strana ima knjiga: '))
+    naslov = input("Unesite naslov knjige: ")
+    autor = input("Unesite autora knjige: ")
+    isbn = input("ISBN: ")
+    izdavac = input("Unesite izdavaca: ")
+    godina = int(input("Unesite godinu izdavanja: "))
+    cena = float(input("Unesite cenu knjige: "))
+    kategorija = input("Unesite kojoj kategoriji knjiga pripada: ")
+    broj_strana = int(input("Unesite koliko strana ima knjiga: "))
     nova_knjiga = {}
     nova_knjiga['sifra'] = sifra
     nova_knjiga['naslov'] = naslov
@@ -252,7 +251,7 @@ def dodaj_knjige():
     nova_knjiga['obrisana'] = False
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne ")
-        stavka = input('Izaberite stavku: ')
+        stavka = input("Izaberite stavku: ")
         if stavka == '1':
             print("Nova knjiga je dodata u bazu. ")
             knjige.append(nova_knjiga)
@@ -269,7 +268,7 @@ def izmeni_knjige():
     knjige = ucitaj_knjige()
 
     while True:
-        sifra = input("Unesite sifru:")
+        sifra = input("Unesite sifru: ")
         postoji = False
         i = -1
         for knjiga in knjige:
@@ -284,9 +283,7 @@ def izmeni_knjige():
         else:
             break
 
-
     izmena = knjige[i]
-  #  z = i
     izmene = [izmena]
     list(izmene)
     print("Ako ne zelite da promenite neku vrednost, ostavite prazno polje.")

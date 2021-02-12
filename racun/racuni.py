@@ -129,26 +129,26 @@ def kreiranje_izvestaja():
             ukupna_prodaja_akcija()
         elif opcija == '3':
             while True:
-                print("=============================")
+                print("=" * 30)
                 print("1. Izvestaj po autoru")
                 print("2. Izvestaj po izdavacu")
                 print("3. Izvestaj po kategoriji")
-                print("=============================")
-                opcija = input('\n>>>')
+                print("=" * 30)
+                opcija = input('\nIzaberite stavku: ')
 
                 if opcija == '1':
-                    autor = input("Unesite ime autora")
+                    autor = input("Unesite ime autora: ")
                     ukupna_prodaja_po_kljucu('autor', autor)
                     break
                 elif opcija == '2':
-                    izdavac = input('Unesite izdavaca')
+                    izdavac = input("Unesite izdavaca: ")
                     ukupna_prodaja_po_kljucu('izdavac', izdavac)
                     break
                 elif opcija == '3':
-                    kategorija = input('Unesite kategoriju')
+                    kategorija = input("Unesite kategoriju: ")
                     ukupna_prodaja_po_kljucu('kategorija', kategorija)
                     break
                 else:
-                    print('Pogresna unos! Pokusajte ponovo.')
+                    print("Pogresna unos! Pokusajte ponovo.")
         else:
-            print('Pogresan unos! Pokusajte ponovo.')
+            print("Pogresan unos! Pokusajte ponovo.")
