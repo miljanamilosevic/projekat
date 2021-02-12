@@ -103,6 +103,8 @@ def pregled_knjiga(knjige):
     print(zaglavlje)
     print('-' * len(zaglavlje))
     for knjiga in knjige:
+        if knjiga['obrisana'] == True:
+            continue
         ispis = f"{knjiga['sifra']:<5}{knjiga['naslov']:<35}{knjiga['isbn']:<20}{knjiga['autor']:<20}{knjiga['izdavac']:<20}{knjiga['broj strana']:<20}{knjiga['godina']:<20}{knjiga['cena']:<10}{knjiga['kategorija']:<20}"
         print(ispis)
     print('-' * len(zaglavlje))
@@ -174,8 +176,7 @@ def pretrazi_knjige():
     else:
         print("Greska!Pokusajte ponovo!")
 
-    for knjiga in knjige:
-        print(knjiga)  ##prikazi knjige-pregled knjiga?
+    pregled_knjiga(knjige)
 
 
 def sortiraj_knjige(kljuc):
@@ -248,6 +249,7 @@ def dodaj_knjige():
     nova_knjiga['cena'] = cena
     nova_knjiga['godina'] = godina
     nova_knjiga['kategorija'] = kategorija
+    nova_knjiga['obrisana'] = False
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne ")
         stavka = input('Izaberite stavku: ')
@@ -273,6 +275,7 @@ def izmeni_knjige():
         for knjiga in knjige:
             i += 1
             if knjiga['sifra'] == sifra:
+
                 print("Knjiga uspesno pronadjena!")
                 postoji = True
                 break
@@ -281,34 +284,35 @@ def izmeni_knjige():
         else:
             break
 
+
     izmena = knjige[i]
-    z = i
+  #  z = i
     izmene = [izmena]
     list(izmene)
     print("Ako ne zelite da promenite neku vrednost, ostavite prazno polje.")
     naslov = input("\nIzmenite naslov: ")
-    if (naslov == " "):
+    if (naslov == ""):
         naslov = knjige[i]['naslov']
     autor = input("Izmenite autora: ")
-    if (autor == " "):
+    if (autor == ""):
         autor = knjige[i]['autor']
     isbn = input("Izmenite ISBN: ")
-    if (isbn == " "):
+    if (isbn == ""):
         isbn = knjige[i]['isbn']
     izdavac = input("Izmenite izdavaca: ")
-    if (izdavac == " "):
-        publisher = knjige[i]['izdavac']
-    godina = int(input("Izmenite godinu: "))
-    if (godina == " "):
+    if (izdavac == ""):
+        izdavac = knjige[i]['izdavac']
+    godina = input("Izmenite godinu: ")
+    if (godina == ""):
         godina = knjige[i]['godina']
-    cena = float(input("Izmenite cenu: "))
-    if (cena == " "):
+    cena = input("Izmenite cenu: ")
+    if (cena == ""):
         cena = knjige[i]['cena']
     kategorija = input("Izmenite kategoriju knjige: ")
-    if (kategorija == ''):
+    if (kategorija == ""):
         kategorija = knjige[i]['kategorija']
-    broj_strana = int(input("Izmenite broj strana: "))
-    if (broj_strana == " "):
+    broj_strana = input("Izmenite broj strana: ")
+    if (broj_strana == ""):
         broj_strana = knjige[i]['broj strana']
     nova_knjiga = {}
     nova_knjiga['sifra'] = sifra
@@ -316,17 +320,16 @@ def izmeni_knjige():
     nova_knjiga['autor'] = autor
     nova_knjiga['isbn'] = isbn
     nova_knjiga['izdavac'] = izdavac
-    nova_knjiga['godina'] = godina
-    nova_knjiga['cena'] = cena
+    nova_knjiga['godina'] = int(godina)
+    nova_knjiga['cena'] = float(cena)
     nova_knjiga['kategorija'] = kategorija
-    nova_knjiga['broj strana'] = broj_strana
-    izmene = [knjige[z], nova_knjiga]
-    list(izmene)
+    nova_knjiga['broj strana'] = int(broj_strana)
+    nova_knjiga['obrisana'] = False
     while True:
         print("\nDa li zelite da nastavite?\n1. Da\n2. Ne")
         stavka = input("Izaberite stavku: ")
         if stavka == '1':
-            knjige[z] = nova_knjiga
+            knjige[i] = nova_knjiga
             break
         elif stavka == '2':
             return False

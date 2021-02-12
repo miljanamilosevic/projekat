@@ -1,1 +1,44 @@
-[{"korisnicko_ime": "mikms", "lozinka": "miljana123", "ime": "Miljana", "prezime": "Milosevic", "tip_korisnika": "Administrator"}, {"korisnicko_ime": "iQuerz", "lozinka": "mrzimepl", "ime": "Nikola", "prezime": "Rasic", "tip_korisnika": "Menadzer"}, {"korisnicko_ime": "nevena56", "lozinka": "vezbamljubaznost", "ime": "Nevena", "prezime": "Stanojevic", "tip_korisnika": "Prodavac"}, {"korisnicko_ime": "1", "lozinka": "1", "ime": "1", "prezime": "1", "tip_korisnika": "Menadzer"}, {"korisnicko_ime": "dino", "lozinka": "dino123", "ime": "Dinoslav", "prezime": "Dinic", "tip_korisnika": "Prodavac"}]
+[
+    {
+        "ime": "Miljana",
+        "korisnicko_ime": "mikms",
+        "lozinka": "miljana123",
+        "prezime": "Milosevic",
+        "tip_korisnika": "Administrator"
+    },
+    {
+        "ime": "Nikola",
+        "korisnicko_ime": "iQuerz",
+        "lozinka": "mrzimepl",
+        "prezime": "Rasic",
+        "tip_korisnika": "Menadzer"
+    },
+    {
+        "ime": "Nevena",
+        "korisnicko_ime": "nevena56",
+        "lozinka": "vezbamljubaznost",
+        "prezime": "Stanojevic",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "ime": "1",
+        "korisnicko_ime": "1",
+        "lozinka": "1",
+        "prezime": "1",
+        "tip_korisnika": "Menadzer"
+    },
+    {
+        "ime": "Dinoslav",
+        "korisnicko_ime": "dino",
+        "lozinka": "dino123",
+        "prezime": "Dinic",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "ime": "Stefan",
+        "korisnicko_ime": "stex",
+        "lozinka": "stex",
+        "prezime": "Milosevic",
+        "tip_korisnika": "Menadzer"
+    }
+]

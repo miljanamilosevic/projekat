@@ -93,5 +93,35 @@
             }
         ],
         "sifra": 3
+    },
+    {
+        "datum isteka": "2020-04-15",
+        "knjige": [
+            {
+                "autor": "Deni Gedj",
+                "broj strana": 508,
+                "cena": 288.0,
+                "godina": 2018,
+                "isbn": "215561612",
+                "izdavac": "Kosmos",
+                "kategorija": "Popularna nauka",
+                "naslov": "Papagajeva teorema",
+                "obrisana": false,
+                "sifra": "102"
+            },
+            {
+                "autor": "Kazuo Isiguro",
+                "broj strana": 347,
+                "cena": 266.0,
+                "godina": 2018,
+                "isbn": "1111111111",
+                "izdavac": "Dereta",
+                "kategorija": "Drama",
+                "naslov": "Ne daj mi nikada da odem",
+                "obrisana": false,
+                "sifra": "108"
+            }
+        ],
+        "sifra": 4
     }
 ]

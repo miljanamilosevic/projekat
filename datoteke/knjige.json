@@ -154,5 +154,17 @@
         "naslov": "Braca Karamazovi",
         "obrisana": true,
         "sifra": "112"
+    },
+    {
+        "autor": "Branko Golubovic",
+        "broj strana": 120,
+        "cena": 500.0,
+        "godina": 2011,
+        "isbn": "9788691261900",
+        "izdavac": "Demoprint 95",
+        "kategorija": "Biografija",
+        "naslov": "Pisma iz Avganistana",
+        "obrisana": false,
+        "sifra": "113"
     }
 ]

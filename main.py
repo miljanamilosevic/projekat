@@ -124,17 +124,20 @@ def main():
     print("=================================")
     print("\n===========Ulogujte se===========")
     print()
-    ulogovani_korisnik = prijava()
-    if ulogovani_korisnik is not None:
-        if ulogovani_korisnik['tip_korisnika'] == 'Administrator':
-            meni_administrator()
-        elif ulogovani_korisnik['tip_korisnika'] == 'Prodavac':
-            meni_prodavac(ulogovani_korisnik)
-        elif ulogovani_korisnik['tip_korisnika'] == 'Menadzer':
-            meni_menadzer()
-    else:
-        print('Prijava neuspesna!')
-        return
+    while True:
+        ulogovani_korisnik = prijava()
+        if ulogovani_korisnik is not None:
+            if ulogovani_korisnik['tip_korisnika'] == 'Administrator':
+                meni_administrator()
+            elif ulogovani_korisnik['tip_korisnika'] == 'Prodavac':
+                meni_prodavac(ulogovani_korisnik)
+            elif ulogovani_korisnik['tip_korisnika'] == 'Menadzer':
+                meni_menadzer()
+            elif ulogovani_korisnik['tip_korisnika'] == 'Izlaz':
+                break
+        else:
+            print('Prijava neuspesna!')
+            return
 
 
 main()
