@@ -8,36 +8,36 @@
     },
     {
         "ime": "Nikola",
-        "korisnicko_ime": "iQuerz",
-        "lozinka": "mrzimepl",
+        "korisnicko_ime": "nikola",
+        "lozinka": "nikola123",
         "prezime": "Rasic",
         "tip_korisnika": "Menadzer"
     },
     {
         "ime": "Nevena",
         "korisnicko_ime": "nevena56",
-        "lozinka": "vezbamljubaznost",
+        "lozinka": "nevena123",
         "prezime": "Stanojevic",
         "tip_korisnika": "Prodavac"
     },
     {
-        "ime": "1",
-        "korisnicko_ime": "1",
-        "lozinka": "1",
-        "prezime": "1",
+        "ime": "Kaca",
+        "korisnicko_ime": "kaca",
+        "lozinka": "kaca123",
+        "prezime": "Rasic",
         "tip_korisnika": "Menadzer"
     },
     {
-        "ime": "Dinoslav",
-        "korisnicko_ime": "dino",
-        "lozinka": "dino123",
-        "prezime": "Dinic",
+        "ime": "Srna",
+        "korisnicko_ime": "srna",
+        "lozinka": "srna123",
+        "prezime": "Miletic",
         "tip_korisnika": "Prodavac"
     },
     {
         "ime": "Stefan",
         "korisnicko_ime": "stex",
-        "lozinka": "stex",
+        "lozinka": "stex123",
         "prezime": "Milosevic",
         "tip_korisnika": "Menadzer"
     }
